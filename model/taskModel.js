@@ -1,10 +1,10 @@
 import { db } from "./db.js";
 import { DataTypes } from "sequelize";
 
-export const task = db.define('tareas', {
+export const taskModel = db.define('tareas', {
     title: {type: DataTypes.STRING},
     description: {type: DataTypes.STRING},
-    qualification: {type: DataTypes.FLOAT},
+    qualification: {type: DataTypes.STRING},
     deliveryDate: {type: DataTypes.DATE},
     
 })
