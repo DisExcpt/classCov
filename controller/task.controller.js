@@ -13,7 +13,7 @@ export const  createTask = async (req, res) => {
 }
 
 //Mostrar todos R
-export const  getTasks = async (req, res) => {
+export const  getAllTasks = async (req, res) => {
     try {
         const tasks = await taskModel.findAll()
         res.json(tasks)
