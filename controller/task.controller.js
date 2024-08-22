@@ -49,16 +49,6 @@ export const createTask = [
         }
     }
 ];
-//Crear R
-// export const createTask = async (req, res) => {
-//     try {
-//         await taskModel.create(req.body)
-//         res.json({'message': 'Tarea creada correctamente'})
-//     } catch (error) {
-//         res.json({message: error.message})
-//     }
-    
-// }
 
 //Mostrar todos R
 export const getAllTasks = async (req, res) => {
@@ -103,19 +93,7 @@ export const updateTask = [
     }
 ];
 
-// export const updateTask = async (req, res) => {
- 
-//     try {
-//         await taskModel.update(req.body, {
-//             where: {id: req.params.id}
-//         })
-//         res.json({"message": "Tarea Actualizada con exito"})
-//     } catch (error) {
-//         res.json({message: error.message})
-//     }
-// }
 
-//Eliminar D
 export const deleteTask = async (req, res) => {
     try {
         await taskModel.destroy({
