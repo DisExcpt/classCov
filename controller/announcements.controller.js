@@ -1,5 +1,5 @@
 import { where } from 'sequelize'
-import {taskModel} from '../model/taskModel.js'
+import {announcementsModel} from '../model/taskModel.js'
 import { body, validationResult } from 'express-validator';
 
 // Lista de palabras reservadas y caracteres sospechosos
@@ -8,7 +8,6 @@ const specialCharacters = ['--', ';', '/*', '*/', '"', "'"];
 
 // Función para validar entradas contra palabras reservadas y caracteres especiales
 const containsReservedWords = (value) => {
-
     // Verificar si la entrada contiene alguna de las palabras reservadas
     const wordsMatch = reservedWords.some(word => new RegExp(`\\b${word}\\b`, 'i').test(value));
     // Verificar si la entrada contiene caracteres especiales
@@ -18,17 +17,18 @@ const containsReservedWords = (value) => {
 
 // Middleware de validación para las tareas
 const validateTask = [
-    body('title')
-        .notEmpty().withMessage('El título es obligatorio')
-        .custom(containsReservedWords).withMessage('El título contiene palabras reservadas o caracteres no permitidos'),
-    body('description')
-        .notEmpty().withMessage('La descripción es obligatoria')
+    body('title').notEmpty().withMessage('El titulo es obligatorio')
         .custom(containsReservedWords).withMessage('La descripción contiene palabras reservadas o caracteres no permitidos'),
-    body('qualification')
-        .isInt({ min: 0, max: 10 }).withMessage('La calificación debe ser un número entre 0 y 10'),
-    body('deliveryDate')
-        .isISO8601().withMessage('La fecha de entrega debe ser una fecha válida'),
     
+    body('content').notEmpty().withMessage('El contenido es obligatorio')
+        .custom(containsReservedWords).withMessage('La descripción contiene palabras reservadas o caracteres no permitidos'),
+
+    body('teacher_id').notEmpty().withMessage('El id del Profesor es obligatorio')
+    .custom(containsReservedWords).withMessage('La descripción contiene palabras reservadas o caracteres no permitidos'),
+
+    body('teacher_id').notEmpty().withMessage('El id de la Clase es obligatorio')
+    .custom(containsReservedWords).withMessage('La descripción contiene palabras reservadas o caracteres no permitidos'),
+
     (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -42,12 +42,12 @@ const validateTask = [
 
 
 // C
-export const createTask = [
+export const createAnnouncement = [
     validateTask,
     async (req, res) => {
         try {
-            await taskModel.create(req.body);
-            res.json({ 'message': 'Tarea creada correctamente' });
+            await announcementsModel.create(req.body);
+            res.json({ 'message': 'Anuncio creado correctamente' });
         } catch (error) {
             console.error('Database Error:', error);
             res.json({ message: error.message });
@@ -56,9 +56,9 @@ export const createTask = [
 ];
 
 //Mostrar todos R
-export const getAllTasks = async (req, res) => {
+export const getAllAnnouncements = async (req, res) => {
     try {
-        const tasks = await taskModel.findAll()
+        const tasks = await announcementsModel.findAll()
         res.json(tasks)
     } catch (error) {
         res.json({message: error.message})
@@ -66,10 +66,10 @@ export const getAllTasks = async (req, res) => {
 }
 
 //Mostrar uno R
-export const getTask = async (req, res) => {
+export const getAnnouncement = async (req, res) => {
    
     try {
-        const task = await taskModel.findAll({
+        const task = await announcementsModel.findAll({
             where: {id: req.params.id}
         })
         res.json(task[0])
@@ -80,17 +80,17 @@ export const getTask = async (req, res) => {
 
 //Actualizar U
 
-export const updateTask = [
+export const updateAnnouncement = [
     validateTask,
     async (req, res) => {
         try {
-            const result = await taskModel.update(req.body, {
+            const result = await announcementsModel.update(req.body, {
                 where: { id: req.params.id }
             });
             if (result[0] === 0) {
-                return res.status(404).json({ message: 'Tarea no encontrada' });
+                return res.status(404).json({ message: 'Anuncio no encontrado' });
             }
-            res.json({ "message": "Tarea Actualizada con éxito" });
+            res.json({ "message": "Comentario Actualizado con éxito" });
         } catch (error) {
             console.error('Database Error:', error);
             res.json({ message: error.message });
@@ -99,12 +99,12 @@ export const updateTask = [
 ];
 
 // D
-export const deleteTask = async (req, res) => {
+export const deleteAnnouncement = async (req, res) => {
     try {
-        await taskModel.destroy({
+        await announcementsModel.destroy({
             where: {id: req.params.id}
         })
-        res.json({'message': 'Tarea eliminada con exito'})
+        res.json({'message': 'Anuncio eliminado con exito'})
     } catch (error) {
         res.json({message: error.message})
     }
