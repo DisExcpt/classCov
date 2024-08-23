@@ -1,6 +1,7 @@
 import express from "express";
 import { createTask, deleteTask, getAllTasks, getTask, updateTask } from "../../controller/task.controller.js";
 import { createAnnouncement, getAllAnnouncements, getAnnouncement, updateAnnouncement, deleteAnnouncement } from "../../controller/announcements.controller.js";
+import { createStudent, deleteStudent, getAllStudents, getStudent, updateStudent } from "../../controller/students.controller.js";
 
 const router = express.Router();
 
@@ -17,5 +18,11 @@ router.get('/announcements', getAllAnnouncements);//R
 router.get('/announcement/:id', getAnnouncement);//R
 router.put('/announcement/:id', updateAnnouncement);//U
 router.delete('/announcement/:id', deleteAnnouncement);//D
+
+router.post('/student', createStudent);//C
+router.get('/students', getAllStudents);//R
+router.get('/student/:id', getStudent);//R
+router.put('/student/:id', updateStudent);//U
+router.delete('/student/:id', deleteStudent);//D
 
 export default router;
