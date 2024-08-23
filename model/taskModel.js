@@ -17,4 +17,21 @@ export const announcementsModel = db.define('announcements', {
     class_id: {type: DataTypes.INTEGER},
 })
 
+export const studentsModel = db.define('students', {
+    name: {type: DataTypes.STRING},
+    email: {type: DataTypes.STRING},
+    guardian_id: {type: DataTypes.INTEGER},
 
+})
+
+export const guardiansModel = db.define('guardians' ,{ 
+    name: {type: DataTypes.STRING},
+    email: {type: DataTypes.STRING},
+    phone: {type: DataTypes.INTEGER},
+})
+
+export const teachersModel = db.define('teachers', {
+    name: {type: DataTypes.STRING},
+    email: {type: DataTypes.STRING},
+    hire_date: {type: DataTypes.DATE},
+})
