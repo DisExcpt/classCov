@@ -1,5 +1,5 @@
 import { where } from 'sequelize'
-import {studentsModel} from '../model/taskModel.js'
+import {guardiansModel} from '../model/taskModel.js'
 import { body, validationResult } from 'express-validator';
 
 // Lista de palabras reservadas y caracteres sospechosos
@@ -25,7 +25,7 @@ const validateTask = [
         .notEmpty().withMessage('El email es obligatorio')
         .custom(containsReservedWords).withMessage('La descripción contiene palabras reservadas o caracteres no permitidos'),
 
-    body('guardian_id').isInt().withMessage('El codigo debe de contener solamente numeros'),
+    body('phone').isInt({min: 10, max: 10}).withMessage('El codigo debe de contener solamente 10 numeros'),
     
     
     (req, res, next) => {
@@ -41,12 +41,12 @@ const validateTask = [
 
 
 // C
-export const createStudent = [
+export const createGuardian = [
     validateTask,
     async (req, res) => {
         try {
-            await studentsModel.create(req.body);
-            res.json({ 'message': 'Alumno creado correctamente' });
+            await guardiansModel.create(req.body);
+            res.json({ 'message': 'Tutor creado correctamente' });
         } catch (error) {
             console.error('Database Error:', error);
             res.json({ message: error.message });
@@ -55,9 +55,9 @@ export const createStudent = [
 ];
 
 //Mostrar todos R
-export const getAllStudents = async (req, res) => {
+export const getAllGuardians = async (req, res) => {
     try {
-        const tasks = await studentsModel.findAll()
+        const tasks = await guardiansModel.findAll()
         res.json(tasks)
     } catch (error) {
         res.json({message: error.message})
@@ -65,10 +65,10 @@ export const getAllStudents = async (req, res) => {
 }
 
 //Mostrar uno R
-export const getStudent = async (req, res) => {
+export const getGuardian = async (req, res) => {
    
     try {
-        const task = await studentsModel.findAll({
+        const task = await guardiansModel.findAll({
             where: {id: req.params.id}
         })
         res.json(task[0])
@@ -79,17 +79,17 @@ export const getStudent = async (req, res) => {
 
 //Actualizar U
 
-export const updateStudent = [
+export const updateGuardian = [
     validateTask,
     async (req, res) => {
         try {
-            const result = await studentsModel.update(req.body, {
+            const result = await guardiansModel.update(req.body, {
                 where: { id: req.params.id }
             });
             if (result[0] === 0) {
-                return res.status(404).json({ message: 'Alumno no encontrado' });
+                return res.status(404).json({ message: 'Tutor no encontrada' });
             }
-            res.json({ "message": "Alumno Actualizado con éxito" });
+            res.json({ "message": "Tutor Actualizado con éxito" });
         } catch (error) {
             console.error('Database Error:', error);
             res.json({ message: error.message });
@@ -98,12 +98,12 @@ export const updateStudent = [
 ];
 
 // D
-export const deleteStudent = async (req, res) => {
+export const deleteGuardian = async (req, res) => {
     try {
-        await studentsModel.destroy({
+        await guardiansModel.destroy({
             where: {id: req.params.id}
         })
-        res.json({'message': 'Alumno eliminado con exito'})
+        res.json({'message': 'Tutor eliminado con exito'})
     } catch (error) {
         res.json({message: error.message})
     }
