@@ -3,6 +3,7 @@ import { createTask, deleteTask, getAllTasks, getTask, updateTask } from "../../
 import { createAnnouncement, getAllAnnouncements, getAnnouncement, updateAnnouncement, deleteAnnouncement } from "../../controller/announcements.controller.js";
 import { createStudent, deleteStudent, getAllStudents, getStudent, updateStudent } from "../../controller/students.controller.js";
 import { createGuardian, deleteGuardian, getAllGuardians, getGuardian, updateGuardian } from "../../controller/guardians.controller.js";
+import { createTeacher, deleteTeacher, getAllTeachers, getTeacher, updateTeacher } from "../../controller/teachers.controller.js";
 
 const router = express.Router();
 
@@ -31,5 +32,12 @@ router.get('/guardians', getAllGuardians);
 router.get('/guardian/:id', getGuardian);
 router.put('/guardian/:id', updateGuardian);
 router.delete('/guardian/:id', deleteGuardian);
+
+router.post('/teacher', createTeacher);
+router.get('/teachers', getAllTeachers);
+router.get('/teacher/:id', getTeacher);
+router.put('/teacher/:id', updateTeacher);
+router.delete('/teacher/:id', deleteTeacher);
+
 
 export default router;
