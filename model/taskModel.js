@@ -27,11 +27,19 @@ export const studentsModel = db.define('students', {
 export const guardiansModel = db.define('guardians' ,{ 
     name: {type: DataTypes.STRING},
     email: {type: DataTypes.STRING},
-    phone: {type: DataTypes.INTEGER},
+    phone: {type: DataTypes.STRING},
 })
 
 export const teachersModel = db.define('teachers', {
     name: {type: DataTypes.STRING},
     email: {type: DataTypes.STRING},
     hire_date: {type: DataTypes.DATE},
+})
+
+export const administrationModel = db.define('administration', {
+    name: {type: DataTypes.STRING},
+    email: {type: DataTypes.STRING},
+    phone: {type: DataTypes.STRING},
+    password: {type: DataTypes.STRING},
+
 })
