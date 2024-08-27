@@ -39,7 +39,7 @@ export const teachersModel = db.define('teachers', {
     password: {type: DataTypes.STRING},
 })
 
-export const administrationModel = db.define('administration', {
+export const administrationModel = db.define('administrations', {
     name: {type: DataTypes.STRING},
     email: {type: DataTypes.STRING},
     phone: {type: DataTypes.STRING},
