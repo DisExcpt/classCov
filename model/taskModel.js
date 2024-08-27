@@ -41,5 +41,4 @@ export const administrationModel = db.define('administration', {
     email: {type: DataTypes.STRING},
     phone: {type: DataTypes.STRING},
     password: {type: DataTypes.STRING},
-
 })
