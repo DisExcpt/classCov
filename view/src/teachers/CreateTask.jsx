@@ -1,11 +1,11 @@
-import axios from 'axios'
-import { Link } from 'react-router-dom'
+import React from 'react'
 
-const URI = 'http://localhost:4000/task'
-
-const CreateTask = () => {
-
-    
+function CreateTask() {
+  return (
+    <div>
+      
+    </div>
+  )
 }
 
 export default CreateTask

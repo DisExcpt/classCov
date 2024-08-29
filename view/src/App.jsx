@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <h1>Hola</h1>
+      <h1 className="text-4xl font-bold">Hola</h1>
       <ShowTask></ShowTask>
     </>
   )
