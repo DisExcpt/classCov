@@ -4,7 +4,7 @@ import ShowTask from "./teachers/ShowTask";
 import CreateTask from "./teachers/CreateTask"
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import updatedTask from './teachers/updatedTask';
+import UpdatedTask from './teachers/updatedTask';
 
 
 function App() {
@@ -19,8 +19,9 @@ function App() {
           
           <Route path='/showTasks' element={<ShowTask/>}>Tareas</Route>
           <Route path='/createTask' element={<CreateTask/>}>Crear Tarea</Route>
-          <Route path='/' element={<Home/>}>Inicio</Route>
-          <Route path='/updatedTask/:id' element={<updatedTask/>}>Actualizar</Route>
+          <Route path='/Home' element={<Home/>}>Inicio</Route>
+          <Route path='/UpdatedTask/:id' element={<UpdatedTask/>}>Actualizar</Route>
+
         </Routes>
       </BrowserRouter>
     </>

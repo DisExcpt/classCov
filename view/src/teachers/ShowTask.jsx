@@ -45,13 +45,13 @@ function ShowTask()  {
                     <div className="w-full px-4 py-2 my-2">
                     <p className="text-slate-300"> {task.description}</p>
                         <button 
-                        className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md"
+                        className="bg-red-500 hover:bg-red-600 text-white px-4 py-2  rounded-md "
                         onClick={() => {
                             deleteTask(task.id)
                         }}>Eliminar</button>
 
                         <Link to={`/updatedTask/${task.id}`}>
-                        <button className="bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded-md">
+                        <button className="bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded-md ">
                             Actualizar
                         </button>
                         </Link>

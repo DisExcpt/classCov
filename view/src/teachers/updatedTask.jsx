@@ -41,11 +41,11 @@ function updatedTask() {
     setQualification(res.data.qualification)
     setDeliveryDate(res.data.deliveryDate)
 
-    console.log(res.data)
+    console.log(res.data.id)
   }
 
   return (
-    <div>
+    <div className='bg-zinc-800 max-w-md w-full p-10 rounded-md flex'>
       <form onSubmit={update} >
 
         <input 
