@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
 const URI = 'http://localhost:4000/tasks'
+const URID = 'http://localhost:4000/task/' //URI especifico para eliminar
 
 function ShowTask()  {
 
@@ -22,7 +23,7 @@ function ShowTask()  {
 
     //Eliminar Tarea
     const deleteTask = async(id) => {
-        axios.delete(`${URI}${id}`)
+        await axios.delete(`${URID}${id}`)
         getTasks()
     }
 
@@ -39,7 +40,7 @@ function ShowTask()  {
         {tasks.map ((task) => (
             <tr key={task.id}>
 
-                <header className="flex w-full bg-slate-700 rounded-md">
+                <header className="flex w-full bg-slate-700 rounded-md my-2">
                     <h1 className="text-2xl font-bold w-full my-2 px-4 py-2">{task.title}</h1>
                     <div className="w-full px-4 py-2 my-2">
                     <p className="text-slate-300"> {task.description}</p>
@@ -48,6 +49,12 @@ function ShowTask()  {
                         onClick={() => {
                             deleteTask(task.id)
                         }}>Eliminar</button>
+
+                        <Link to={`/updatedTask/${task.id}`}>
+                        <button className="bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded-md">
+                            Actualizar
+                        </button>
+                        </Link>
         
                         
                     </div>

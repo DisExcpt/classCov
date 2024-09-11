@@ -1,12 +1,10 @@
-import {useForm} from 'react-hook-form'
-import axios from 'axios';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import axios from "axios"
+import { useEffect, useState } from "react"
+import { useNavigate, useParams } from "react-router-dom"
 
-const URI = 'http://localhost:4000/task'
+const URI = 'http://localhost:4000/task/'
 
-function CreateTask() {
-  const {register, handleSubmit} = useForm()
+function updatedTask() {
 
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
@@ -14,24 +12,42 @@ function CreateTask() {
   const [qualification, setQualification] = useState('')
   const [deliveryDate, setDeliveryDate] = useState('')
 
-  const navigate =useNavigate()
+  const {id} = useParams()
+  const navigate = useNavigate()
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
-  })
+  const update = async (e) => {
 
-  const create = async (e) => {
-    e.preventDefault() 
-    await axios.post(URI,  {title: title, description: description, notes: notes, qualification: qualification,
-      deliveryDate: deliveryDate
+    e.preventDefault()
+    await axios.put(URI+id, {
+        title: title,
+        description: description,
+        notes: notes,
+        qualification: qualification,
+        deliveryDate: deliveryDate
     })
     navigate('/showTasks')
+
   }
 
+  useEffect( () => {
+    getTaskById()
+  },[])
+
+  const getTaskById = async () => {
+    const res = await axios.get(URI+id)
+    setTitle(res.data.title)
+    setDescription(res.data.description)
+    setNotes(res.data.notes)
+    setQualification(res.data.qualification)
+    setDeliveryDate(res.data.deliveryDate)
+
+    console.log(res.data)
+  }
 
   return (
-    <div className='bg-zinc-800 max-w-md w-full p-10 rounded-md flex'>
-      <form onSubmit={create} >
+    <div>
+      <form onSubmit={update} >
+
         <input 
         type='text' 
         placeholder='Titulo'
@@ -72,10 +88,10 @@ function CreateTask() {
         >
         </input>
 
-        <button className='bg-green-600 rounded-md w-20 mx-32' type='submit'>Guardar</button>
+        <button className='bg-green-600 rounded-md w-20 mx-32' type='submit'>Actualizar</button>
       </form>
     </div>
   )
 }
 
-export default CreateTask
+export default updatedTask
