@@ -88,7 +88,7 @@ function updatedTask() {
         >
         </input>
 
-        <button className='bg-green-600 rounded-md w-20 mx-32' type='submit'>Actualizar</button>
+        <button className='bg-green-600 hover:bg-green-800 rounded-md w-20 mx-32' type='submit'>Actualizar</button>
       </form>
     </div>
   )
