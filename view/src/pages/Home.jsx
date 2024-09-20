@@ -2,6 +2,8 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import TaskCard from '../components/TaskCard'
+import ShowTask from '../teachers/ShowTask'
 
 function Home() {
 
@@ -29,20 +31,10 @@ function Home() {
       
          
           <div className='bg-blue-700 '>
-            <div className=" max-w-md w-full p-10 rounded-md my-2 px-4 py-2">
-              {tasks.map ((task) => (
-                  <tr key={task.id}>
+          
+            <ShowTask></ShowTask>
+          
 
-                      <header className="flex w-full bg-slate-700 rounded-md my-2">
-                        <Link to={`/updatedTask/${task.id}`}>
-                          <h1 className="text-2xl w-full my-2 px-4 py-2 hover:font-semibold">{task.title}</h1>
-                        </Link>
-                      </header>
-              
-                  </tr>
-              ))}
-
-          </div>
         </div>
 
         <div className='bg-green-700 py-60'>

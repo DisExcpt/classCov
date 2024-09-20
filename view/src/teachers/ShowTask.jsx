@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
 const URI = 'http://localhost:4000/tasks'
+
 const URID = 'http://localhost:4000/task/' //URI especifico para eliminar
 
 function ShowTask()  {
@@ -19,6 +20,8 @@ function ShowTask()  {
         const res = await axios.get(URI)
         setTask(res.data)
     }
+
+    
 
 
     //Eliminar Tarea
@@ -36,14 +39,18 @@ function ShowTask()  {
   return (
 
     <>
-    <div className=" max-w-md w-full p-10 rounded-md my-2 px-4 py-2">
-        {tasks.map ((task) => (
-            <tr key={task.id}>
+   
+    <div className=" max-w-md w-full p-10 rounded-md my-2 px-4 py-2 ">
+    {tasks.map ((task) => (
+    
+
+            <tr  key={task.id} >
 
                 <header className="flex w-full bg-slate-700 rounded-md my-2">
                     <h1 className="text-2xl font-bold w-full my-2 px-4 py-2">{task.title}</h1>
                     <div className="w-full px-4 py-2 my-2">
                     <p className="text-slate-300"> {task.description}</p>
+                    
                         <button 
                         className="bg-red-500 hover:bg-red-600 text-white px-4 py-2  rounded-md "
                         onClick={() => {
@@ -55,6 +62,10 @@ function ShowTask()  {
                             Actualizar
                         </button>
                         </Link>
+
+                        <Link to={`/TaskCard/${task.id}`}>  
+                            <button className='bg-yellow-300 px-2 py-2 rounded-lg'>ir</button>
+                        </Link>
         
                         
                     </div>
@@ -64,6 +75,7 @@ function ShowTask()  {
         ))}
 
     </div>
+    
     </>
   )
 }

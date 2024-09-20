@@ -25,7 +25,7 @@ function CreateTask() {
     await axios.post(URI,  {title: title, description: description, notes: notes, qualification: qualification,
       deliveryDate: deliveryDate
     })
-    navigate('/showTasks')
+    navigate('/Home')
   }
 
 
