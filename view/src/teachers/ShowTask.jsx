@@ -46,10 +46,11 @@ function ShowTask()  {
 
             <tr  key={task.id} >
 
-                <header className="flex w-full bg-slate-700 rounded-md my-2">
+                <Link to={`/TaskCard/${task.id}`}>  
+                <header className="flex w-full bg-slate-500 hover:bg-slate-700 rounded-md my-2">
                     <h1 className="text-2xl font-bold w-full my-2 px-4 py-2">{task.title}</h1>
                     <div className="w-full px-4 py-2 my-2">
-                    <p className="text-slate-300"> {task.description}</p>
+                    <p className="text-black font-semibold"> {task.description}</p>
                     
                         <button 
                         className="bg-red-500 hover:bg-red-600 text-white px-4 py-2  rounded-md "
@@ -63,13 +64,12 @@ function ShowTask()  {
                         </button>
                         </Link>
 
-                        <Link to={`/TaskCard/${task.id}`}>  
-                            <button className='bg-yellow-300 px-2 py-2 rounded-lg'>ir</button>
-                        </Link>
+                           
         
                         
                     </div>
                 </header>
+            </Link>
         
             </tr>
         ))}
