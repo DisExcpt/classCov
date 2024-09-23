@@ -8,8 +8,6 @@ const URI = 'http://localhost:4000/task/'
 
 function TaskCard()  {
 
-
-
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [notes, setNotes] = useState('')

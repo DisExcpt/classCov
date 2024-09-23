@@ -15,6 +15,7 @@ export const announcementsModel = db.define('announcements', {
     content: {type: DataTypes.STRING},
     teacher_id: {type: DataTypes.INTEGER},
     class_id: {type: DataTypes.INTEGER},
+    date: {type: DataTypes.DATE}
 })
 
 export const studentsModel = db.define('students', {

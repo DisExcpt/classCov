@@ -6,9 +6,3 @@ export const db = new Sequelize('classcov', 'root', '', {
     dialect: "mysql"
 })
 
-export const conn =  createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'classcov'
-})

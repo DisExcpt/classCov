@@ -2,8 +2,8 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
-import TaskCard from '../components/TaskCard'
 import ShowTask from '../teachers/ShowTask'
+import ShowAnnouncements from '../teachers/ShowAnnouncements'
 
 function Home() {
 
@@ -38,7 +38,7 @@ function Home() {
         </div>
 
         <div className='bg-green-700 py-60'>
-          Mund
+          <ShowAnnouncements></ShowAnnouncements>
         </div>
 
         <div className='bg-red-700 py-60'>

@@ -31,7 +31,11 @@ function ShowTask()  {
     }
 
     if (tasks.length === 0) {
-        return(<h1>No hay tareas</h1>)
+        <Link to={'/createTask'}>
+            <h1>No hay Tareas</h1>
+            <button className='bg-blue-600 text-black font-bold rounded-md hover:bg-blue-800 px-3'>Crear Tarea</button>
+    
+        </Link>
       }
 
 
@@ -39,6 +43,10 @@ function ShowTask()  {
   return (
 
     <>
+
+    <Link to={'/CreateAnnouncements'}>
+        <button className='bg-blue-600 text-black font-bold rounded-md hover:bg-blue-800 px-3'>Crear tarea</button>
+    </Link>
    
     <div className=" max-w-md w-full p-10 rounded-md my-2 px-4 py-2 ">
     {tasks.map ((task) => (

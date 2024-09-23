@@ -32,6 +32,7 @@ function CreateTask() {
   return (
     <div className='bg-zinc-800 max-w-md w-full p-10 rounded-md flex'>
       <form onSubmit={create} >
+        <h1 className='font-bold text-white text-center text-3xl'>Tareas</h1>
         <input 
         type='text' 
         placeholder='Titulo'

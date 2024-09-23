@@ -11,8 +11,10 @@ function Navbar() {
             <li>
                 <Link className="text-white" to='/showTasks'>Tareas</Link>
             </li>
+        
+
             <li>
-                <Link className="text-white " to='/createTask'>Crear Tarea</Link>
+            <Link className="text-white " to='/ShowAnnouncements'>Anuncios</Link>
             </li>
         </ul>
     </nav>
