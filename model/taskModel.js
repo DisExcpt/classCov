@@ -6,7 +6,10 @@ export const taskModel = db.define('tareas', {
     description: {type: DataTypes.STRING},
     qualification: {type: DataTypes.STRING},
     deliveryDate: {type: DataTypes.DATE},
+    notes: {type: DataTypes.STRING},
+    status: {type: DataTypes.STRING},
     notes: {type: DataTypes.STRING}
+    
     
 })
 
@@ -15,7 +18,7 @@ export const announcementsModel = db.define('announcements', {
     content: {type: DataTypes.STRING},
     teacher_id: {type: DataTypes.INTEGER},
     class_id: {type: DataTypes.INTEGER},
-    date: {type: DataTypes.DATE}
+    date: {type: DataTypes.DATE},
 })
 
 export const studentsModel = db.define('students', {
@@ -23,6 +26,11 @@ export const studentsModel = db.define('students', {
     email: {type: DataTypes.STRING},
     guardian_id: {type: DataTypes.INTEGER},
     password: {type: DataTypes.STRING},
+    role: {type: DataTypes.INTEGER},
+    date_of_birth: {type: DataTypes.DATE},
+    admission: {type: DataTypes.DATE},
+    status: {type: DataTypes.STRING},
+    
 
 })
 
@@ -31,6 +39,9 @@ export const guardiansModel = db.define('guardians' ,{
     email: {type: DataTypes.STRING},
     phone: {type: DataTypes.STRING},
     password: {type: DataTypes.STRING},
+    role: {type: DataTypes.INTEGER},
+    date_of_birth: {type: DataTypes.DATE},
+    status: {type: DataTypes.STRING},
 })
 
 export const teachersModel = db.define('teachers', {
@@ -38,6 +49,11 @@ export const teachersModel = db.define('teachers', {
     email: {type: DataTypes.STRING},
     hire_date: {type: DataTypes.DATE},
     password: {type: DataTypes.STRING},
+    role: {type: DataTypes.INTEGER},
+    phone: {type: DataTypes.STRING},
+    date_of_birth: {type: DataTypes.DATE},
+    status: {type: DataTypes.STRING},
+
 })
 
 export const administrationModel = db.define('administrations', {
@@ -45,4 +61,7 @@ export const administrationModel = db.define('administrations', {
     email: {type: DataTypes.STRING},
     phone: {type: DataTypes.STRING},
     password: {type: DataTypes.STRING},
+    role: {type: DataTypes.STRING},
+    date_of_birth: {type: DataTypes.DATE},
+    status: {type: DataTypes.STRING},
 })

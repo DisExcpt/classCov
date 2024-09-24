@@ -26,6 +26,9 @@ const validateTask = [
         .custom(containsReservedWords).withMessage('La descripción contiene palabras reservadas o caracteres no permitidos'),
 
     body('guardian_id').isInt().withMessage('El codigo debe de contener solamente numeros'),
+
+    body('date_of_birth')
+        .isISO8601().withMessage('La fecha de nacimiento debe ser una fecha válida'),
     
     
     (req, res, next) => {

@@ -27,6 +27,10 @@ const validateTask = [
     body('hire_date')
         .isISO8601().withMessage('La fecha de contrato debe ser una fecha válida'),
 
+    body('phone').isInt().withMessage('El telefono debe de contener solamente 10 numeros'),
+
+    body('date_of_birth')
+        .isISO8601().withMessage('La fecha de nacimiento debe ser una fecha válida'),
     
     (req, res, next) => {
         const errors = validationResult(req);

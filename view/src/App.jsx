@@ -11,6 +11,10 @@ import UpdatedAnnouncement from './teachers/UpdatedAnnouncement';
 import ShowAnnouncements from './teachers/ShowAnnouncements';
 import AnnouncementCard from './components/AnnouncementCard';
 import Login from './pages/Login';
+import CreateTeacher from './administration/CreateTeacher';
+import CreateGuardian from './administration/CreateGuardian';
+import CreateStudent from './administration/CreateStudent';
+import CreateAdmin from './administration/CreateAdmin';
 
 
 function App() {
@@ -25,6 +29,7 @@ function App() {
 
           <Route path='/Login' element={<Login/>}>Login</Route>
           
+          
           <Route path='/showTasks' element={<ShowTask/>}>Tareas</Route>
           <Route path='/createTask' element={<CreateTask/>}>Crear Tarea</Route>
           <Route path='/Home' element={<Home/>}>Inicio</Route>
@@ -35,6 +40,11 @@ function App() {
           <Route path='/UpdatedAnnouncement/:id' element={<UpdatedAnnouncement/>}>Actualizar Anuncio</Route>
           <Route path='/ShowAnnouncements' element={<ShowAnnouncements/>}>Mostrar Anuncios</Route>
           <Route path='/AnnouncementCard/:id' element={<AnnouncementCard/>}>Task Anuncio</Route>
+
+          <Route path='/CreateTeacher' element={<CreateTeacher/>}></Route>
+          <Route path='/CreateGuardian' element={<CreateGuardian/>}></Route>
+          <Route path='/CreateStudent' element={<CreateStudent/>}></Route>
+          <Route path='/CreateAdmin' element={<CreateAdmin/>}></Route>
 
         </Routes>
       </BrowserRouter>

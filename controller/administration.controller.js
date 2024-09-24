@@ -25,11 +25,14 @@ const validateTask = [
         .notEmpty().withMessage('El email es obligatorio')
         .custom(containsReservedWords).withMessage('La descripción contiene palabras reservadas o caracteres no permitidos'),
 
-    body('phone').isInt().withMessage('El codigo debe de contener solamente 10 numeros'),
+    body('phone').isInt().withMessage('El telefono debe de contener solamente 10 numeros'),
 
     body('password')
         .notEmpty().withMessage('La contraseña es obligatoria')
         .custom(containsReservedWords).withMessage('El título contiene palabras reservadas o caracteres no permitidos'),
+
+    body('date_of_birth')
+        .isISO8601().withMessage('La fecha de nacimiento debe ser una fecha válida'),
     
     
     (req, res, next) => {
