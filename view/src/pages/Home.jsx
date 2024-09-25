@@ -42,7 +42,7 @@ function Home() {
         </div>
 
         <div className='bg-red-700 py-60'>
-          Mundial
+          
         </div>
 
 

@@ -23,7 +23,7 @@ function ShowTask()  {
         } else {
             setTasks([]);
         }
-        console.log(setTasks)
+       
     }
 
     
