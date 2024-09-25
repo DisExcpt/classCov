@@ -1,33 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+
+import ShowTask from "./teachers/ShowTask";
+import CreateTask from "./teachers/CreateTask"
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import UpdatedTask from './teachers/updatedTask';
+import TaskCard from './components/TaskCard';
+import CreateAnnouncements from './teachers/CreateAnnouncements';
+import UpdatedAnnouncement from './teachers/UpdatedAnnouncement';
+import ShowAnnouncements from './teachers/ShowAnnouncements';
+import AnnouncementCard from './components/AnnouncementCard';
+import Login from './pages/Login';
+import CreateTeacher from './administration/CreateTeacher';
+import CreateGuardian from './administration/CreateGuardian';
+import CreateStudent from './administration/CreateStudent';
+import CreateAdmin from './administration/CreateAdmin';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      
+      <BrowserRouter>
+      <Navbar/>
+        <Routes>
+
+          <Route path='/Login' element={<Login/>}>Login</Route>
+          
+          
+          <Route path='/showTasks' element={<ShowTask/>}>Tareas</Route>
+          <Route path='/createTask' element={<CreateTask/>}>Crear Tarea</Route>
+          <Route path='/Home' element={<Home/>}>Inicio</Route>
+          <Route path='/UpdatedTask/:id' element={<UpdatedTask/>}>Actualizar</Route>
+          <Route path='/TaskCard/:id' element={<TaskCard/>}>Task Cards</Route>
+
+          <Route path='/CreateAnnouncements' element={<CreateAnnouncements/>}>Anuncios</Route>
+          <Route path='/UpdatedAnnouncement/:id' element={<UpdatedAnnouncement/>}>Actualizar Anuncio</Route>
+          <Route path='/ShowAnnouncements' element={<ShowAnnouncements/>}>Mostrar Anuncios</Route>
+          <Route path='/AnnouncementCard/:id' element={<AnnouncementCard/>}>Task Anuncio</Route>
+
+          <Route path='/CreateTeacher' element={<CreateTeacher/>}></Route>
+          <Route path='/CreateGuardian' element={<CreateGuardian/>}></Route>
+          <Route path='/CreateStudent' element={<CreateStudent/>}></Route>
+          <Route path='/CreateAdmin' element={<CreateAdmin/>}></Route>
+
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
