@@ -18,7 +18,7 @@ function Login() {
     <div className='flex justify-center'>
 
         <div className='bg-cyan-800 p-28 w-35 rounded-md'>
-            <form >
+            <form onSubmit={handleSubmit}>
                 <label className='text-black text-3xl font-extrabold flex'>Correo: </label>
                 <input 
                 type='email'
@@ -41,7 +41,7 @@ function Login() {
                 >
                 </input>
 
-                <button className='p-2 flex bg-indigo-500 rounded-md mt-10 ml-20' onClick={handleSubmit}>Entrar</button>
+                <button className='p-2 flex bg-indigo-500 rounded-md mt-10 ml-20' type='submit'>Entrar</button>
             </form>
         </div>
     </div>

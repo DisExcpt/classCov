@@ -9,7 +9,7 @@ const URID = 'http://localhost:4000/announcement/' //URI especifico para elimina
 
 
 function ShowAnnouncements() {
-    const [announcements, setAnnouncements] = useState([])
+    const [announcements, setAnnouncements] = useState([]);
     useEffect(() => {
         getAnnouncements()
     },[])
@@ -18,7 +18,12 @@ function ShowAnnouncements() {
     //Mostrar Tareas
     const getAnnouncements = async () => {
         const res = await axios.get(URI)
-        setAnnouncements(res.data)
+        if (Array.isArray(res.data)) {
+            setAnnouncements(res.data)
+        } else {
+            setAnnouncements([]);
+        }
+        
     }
 
     

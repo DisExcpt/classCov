@@ -9,7 +9,7 @@ const URID = 'http://localhost:4000/task/' //URI especifico para eliminar
 
 function ShowTask()  {
 
-    const [tasks, setTask] = useState([])
+    const [tasks, setTasks] = useState([]);
     useEffect(() => {
         getTasks()
     },[])
@@ -18,7 +18,11 @@ function ShowTask()  {
     //Mostrar Tareas
     const getTasks = async () => {
         const res = await axios.get(URI)
-        setTask(res.data)
+        if (Array.isArray(res.data)) {
+            setTasks(res.data);
+        } else {
+            setTasks([]);
+        }
     }
 
     
@@ -31,11 +35,14 @@ function ShowTask()  {
     }
 
     if (tasks.length === 0) {
-        <Link to={'/createTask'}>
-            <h1>No hay Tareas</h1>
-            <button className='bg-blue-600 text-black font-bold rounded-md hover:bg-blue-800 px-3'>Crear Tarea</button>
-    
-        </Link>
+        return(
+
+            <Link to={'/createTask'}>
+                <h1>No hay Tareas</h1>
+                <button className='bg-blue-600 text-black font-bold rounded-md hover:bg-blue-800 px-3'>Crear Tarea</button>
+        
+            </Link>
+        )
       }
 
 
@@ -44,7 +51,7 @@ function ShowTask()  {
 
     <>
 
-    <Link to={'/CreateAnnouncements'}>
+    <Link to={'/createTask'}>
         <button className='bg-blue-600 text-black font-bold rounded-md hover:bg-blue-800 px-3'>Crear tarea</button>
     </Link>
    

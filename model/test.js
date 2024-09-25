@@ -1,6 +1,8 @@
 import cors from 'cors'
 import express from "express";
 import { PORT } from "./config.js";
+
+
 // import indexRoutes from './routes/index.routes.js'
 import router from './routes/test.routes.js'
 import { db } from './db.js';
@@ -12,7 +14,6 @@ const app = express();
 app.use(cors());
 app.use(express.json())
 app.use('/', router);
-
 
 
 try {

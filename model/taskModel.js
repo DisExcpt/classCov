@@ -8,7 +8,7 @@ export const taskModel = db.define('tareas', {
     deliveryDate: {type: DataTypes.DATE},
     notes: {type: DataTypes.STRING},
     status: {type: DataTypes.STRING},
-    notes: {type: DataTypes.STRING}
+    class_id: {type: DataTypes.INTEGER},
     
     
 })
