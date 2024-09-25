@@ -5,6 +5,7 @@ import { createStudent, deleteStudent, getAllStudents, getStudent, updateStudent
 import { createGuardian, deleteGuardian, getAllGuardians, getGuardian, updateGuardian } from "../../controller/guardians.controller.js";
 import { createTeacher, deleteTeacher, getAllTeachers, getTeacher, updateTeacher } from "../../controller/teachers.controller.js";
 import { createAdmin, deleteAdmin, getAdmin, getAllAdmin, updateAdmin } from "../../controller/administration.controller.js";
+import { createClass, updateClass, deleteClass, getAllClass, getClass } from "../../controller/class.controller.js";
 
 const router = express.Router();
 
@@ -49,6 +50,13 @@ router.get('/admins', getAllAdmin);
 router.get('/admin/:id', getAdmin);
 router.put('/admin/:id', updateAdmin);
 router.delete('/admin/:id', deleteAdmin);
+
+//Clases
+router.post('/class', createClass);
+router.get('/classes', getAllClass);
+router.get('/class/:id', getClass);
+router.put('/class/:id', updateClass);
+router.delete('/class/:id', deleteClass);
 
 
 export default router;

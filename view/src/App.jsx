@@ -15,6 +15,7 @@ import CreateTeacher from './administration/CreateTeacher';
 import CreateGuardian from './administration/CreateGuardian';
 import CreateStudent from './administration/CreateStudent';
 import CreateAdmin from './administration/CreateAdmin';
+import CreateClass from './administration/Classes/CreateClass';
 
 
 function App() {
@@ -45,6 +46,8 @@ function App() {
           <Route path='/CreateGuardian' element={<CreateGuardian/>}></Route>
           <Route path='/CreateStudent' element={<CreateStudent/>}></Route>
           <Route path='/CreateAdmin' element={<CreateAdmin/>}></Route>
+
+          <Route path='/CreateClass' element={<CreateClass/>}></Route>
 
         </Routes>
       </BrowserRouter>

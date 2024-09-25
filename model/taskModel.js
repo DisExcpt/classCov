@@ -65,3 +65,10 @@ export const administrationModel = db.define('administrations', {
     date_of_birth: {type: DataTypes.DATE},
     status: {type: DataTypes.STRING},
 })
+
+export const classModel = db.define('classes', {
+    grade: {type: DataTypes.INTEGER},
+    salon: {type: DataTypes.STRING},
+    shift: {type: DataTypes.STRING},
+    teacher_id: {type: DataTypes.INTEGER},
+})
