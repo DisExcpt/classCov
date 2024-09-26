@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import ShowTask from '../teachers/ShowTask'
 import ShowAnnouncements from '../teachers/ShowAnnouncements'
+import ShowClass from '../administration/Classes/ShowClass'
 
 function Home() {
 
@@ -42,7 +43,8 @@ function Home() {
         </div>
 
         <div className='bg-red-700 py-60'>
-          
+        
+          <ShowClass></ShowClass>
         </div>
 
 

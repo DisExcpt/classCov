@@ -32,11 +32,14 @@ function AnnouncementCard() {
     }
   
     return (
+      <div className='flex justify-center'>
         <div className='bg-zinc-800 max-w-md w-full p-10 rounded-md text-white'>
             <h1>titulo: {title}</h1>
             <p >Contenido: <span className='text-red-700'>{content}</span></p>
             <p>Fecha: {date}</p>
         </div>
+      </div>
+
     )
 }
 

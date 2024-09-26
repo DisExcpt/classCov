@@ -59,7 +59,7 @@ function ShowTask()  {
     <div className=" max-w-md w-full p-10 rounded-md my-2 px-4 py-2 ">
     {tasks.map ((task) => (
     
-
+ 
             <tr  key={task.id} >
 
                 <Link to={`/TaskCard/${task.id}`}>  

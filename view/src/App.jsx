@@ -16,6 +16,9 @@ import CreateGuardian from './administration/CreateGuardian';
 import CreateStudent from './administration/CreateStudent';
 import CreateAdmin from './administration/CreateAdmin';
 import CreateClass from './administration/Classes/CreateClass';
+import UpdateClass from './administration/Classes/UpdateClass';
+import ShowClass from './administration/Classes/ShowClass';
+import ClassCard from './components/ClassCard';
 
 
 function App() {
@@ -48,6 +51,9 @@ function App() {
           <Route path='/CreateAdmin' element={<CreateAdmin/>}></Route>
 
           <Route path='/CreateClass' element={<CreateClass/>}></Route>
+          <Route path='/ShowClass' element={<ShowClass/>}></Route>
+          <Route path='/UpdateClass/:id' element={<UpdateClass/>}></Route>
+          <Route path='/ClassCard/:id' element={<ClassCard/>}></Route>
 
         </Routes>
       </BrowserRouter>

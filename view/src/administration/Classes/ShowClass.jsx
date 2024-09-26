@@ -37,14 +37,14 @@ function ShowClass() {
 
                 <tr  key={salon.id} >
 
-                    <Link to={`/TaskCard/${salon.id}`}>  
+                    <Link to={`/ClassCard/${salon.id}`}>  
                     <header className="flex w-full bg-slate-500 hover:bg-slate-700 rounded-md my-2">
                         <h1 className="text-2xl font-bold w-full my-2 px-4 py-2">{salon.grade}{salon.salon}</h1>
                         <div className="w-full px-4 py-2 my-2">
                         <p className="text-black font-semibold"> {salon.shift}</p>
                         
 
-                            <Link to={`/updatedTask/${salon.id}`}>
+                            <Link to={`/UpdateClass/${salon.id}`}>
                             <button className="bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded-md ">
                                 Actualizar
                             </button>
