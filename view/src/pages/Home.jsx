@@ -2,8 +2,8 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
-import ShowTask from '../teachers/ShowTask'
-import ShowAnnouncements from '../teachers/ShowAnnouncements'
+import ShowTask from '../teachers/Tasks/ShowTask'
+import ShowAnnouncements from '../teachers/Announcements/ShowAnnouncements'
 import ShowClass from '../administration/Classes/ShowClass'
 
 function Home() {
