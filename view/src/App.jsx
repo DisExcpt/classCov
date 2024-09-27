@@ -13,7 +13,7 @@ import AnnouncementCard from './components/AnnouncementCard';
 import Login from './pages/Login';
 import CreateTeacher from './administration/CreateTeacher';
 import CreateGuardian from './administration/CreateGuardian';
-import CreateStudent from './administration/CreateStudent';
+import CreateStudent from './administration/Students/CreateStudent';
 import CreateAdmin from './administration/CreateAdmin';
 import CreateClass from './administration/Classes/CreateClass';
 import UpdateClass from './administration/Classes/UpdateClass';
