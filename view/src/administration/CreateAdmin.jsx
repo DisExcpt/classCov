@@ -28,7 +28,7 @@ function CreateAdmin() {
         await axios.post(URI,  {name: name, email: email, password: password, role: role,
                             phone: phone, date_of_birth: date_of_birth, 
         })
-        navigate('/Home')
+        navigate('/ShowAdmins')
     }
 
   return (

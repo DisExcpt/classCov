@@ -24,6 +24,17 @@ function ShowClass() {
    
     }
 
+    if (salons.length === 0) {
+        return(
+
+            <Link to={'/CreateClass'}>
+                <h1>No hay Tutores</h1>
+                <button className='bg-blue-600 text-black font-bold rounded-md hover:bg-blue-800 px-3'>Crear Clase</button>
+        
+            </Link>
+        )
+      }
+
   return (
     <>
 

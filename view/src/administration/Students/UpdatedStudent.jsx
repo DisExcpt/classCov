@@ -30,7 +30,7 @@ function UpdatedStudent() {
             role: role,
             status: status,
         })
-        navigate('/showTasks')
+        navigate('/ShowStudents')
     
       }
       

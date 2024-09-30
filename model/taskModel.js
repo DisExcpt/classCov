@@ -9,6 +9,7 @@ export const taskModel = db.define('tasks', {
     notes: {type: DataTypes.STRING},
     status: {type: DataTypes.STRING},
     class_id: {type: DataTypes.INTEGER},
+    teacher_id: {type: DataTypes.INTEGER},
     
     
 })

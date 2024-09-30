@@ -30,7 +30,7 @@ function UpdatedTeacher() {
             role: role,
             status: status,
         })
-        navigate('/showTasks')
+        navigate('/ShowTeachers')
     
       }
       

@@ -57,41 +57,45 @@ function ShowAnnouncements() {
     <Link to={'/CreateAnnouncements'}>
     <button className='bg-blue-600 text-black font-bold rounded-md hover:bg-blue-800 px-3'>Crear Anuncios</button>
     </Link>
-    <div className=" max-w-md w-full p-10 rounded-md my-2 px-4 py-2 ">
-    {announcements.map ((announcement) => (
-    
+    <div className=" max-w-md rounded-md my-2 px-4 py-2 flex justify-center mx-[50%]">
 
-            <tr  key={announcement.id} >
-
-                <Link to={`/AnnouncementCard/${announcement.id}`}>  
-                <header className="flex w-full bg-slate-500 hover:bg-slate-700 rounded-md my-2">
-                    <h1 className="text-2xl font-bold w-full my-2 px-4 py-2">{announcement.title}</h1>
-                    <div className="w-full px-4 py-2 my-2">
-                    <p className="text-black font-semibold"> {announcement.content}</p>
-                    
-                        <button 
-                        className="bg-red-500 hover:bg-red-600 text-white px-4 py-2  rounded-md "
-                        onClick={() => {
-                            deleteAnnouncement(announcement.id)
-                        }}>Eliminar</button>
-
-                        <Link to={`/UpdatedAnnouncement/${announcement.id}`}>
-                        <button className="bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded-md ">
-                            Actualizar
-                        </button>
-                        </Link>
-
-                           
+        <div className=" max-w-md w-full rounded-md my-2 px-full py-full flex justify-center">
+        {announcements.map ((announcement) => (
         
+
+                <tr  key={announcement.id} >
+
+                    <Link to={`/AnnouncementCard/${announcement.id}`}>  
+                    <header className="flex w-full bg-slate-500 hover:bg-slate-700 rounded-md my-2">
+                        <h1 className="text-2xl font-bold w-full my-2 px-4 py-2">{announcement.title}</h1>
+                        <div className="w-full px-4 py-2 my-2">
+                        <p className="text-black font-semibold"> {announcement.content}</p>
                         
-                    </div>
-                </header>
-            </Link>
-        
-            </tr>
-        ))}
+                            <button 
+                            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2  rounded-md "
+                            onClick={() => {
+                                deleteAnnouncement(announcement.id)
+                            }}>Eliminar</button>
 
+                            <Link to={`/UpdatedAnnouncement/${announcement.id}`}>
+                            <button className="bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded-md ">
+                                Actualizar
+                            </button>
+                            </Link>
+
+                            
+            
+                            
+                        </div>
+                    </header>
+                </Link>
+            
+                </tr>
+            ))}
+
+        </div>
     </div>
+
     
     </>
   )

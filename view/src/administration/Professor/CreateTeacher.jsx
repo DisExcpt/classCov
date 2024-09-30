@@ -28,7 +28,7 @@ function CreateTeacher() {
       await axios.post(URI,  {name: name, email: email, hire_date: hire_date, password: password, role: role,
                           phone: phone, date_of_birth,
       })
-      navigate('/Home')
+      navigate('/ShowTeachers')
     }
 
 

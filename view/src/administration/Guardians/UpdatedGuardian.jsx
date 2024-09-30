@@ -28,7 +28,7 @@ function UpdatedGuardian() {
             role: role,
             status: status,
         })
-        navigate('/showTasks')
+        navigate('/ShowGuardians')
     
       }
       

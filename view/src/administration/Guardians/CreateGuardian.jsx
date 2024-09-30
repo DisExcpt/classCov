@@ -17,6 +17,7 @@ function CreateGuardian() {
     const [phone, setPhone] = useState('')
     const [date_of_birth, setDate_of_birth] = useState('')
     const [role, setRole] = useState('3')
+    const [status, setStatus] = useState('')
 
     const onSubmit = handleSubmit((data) => {
         console.log(data);
@@ -25,9 +26,9 @@ function CreateGuardian() {
     const create = async (e) => {
         e.preventDefault() 
         await axios.post(URI,  {name: name, email: email, password: password, role: role,
-                            phone: phone, date_of_birth: date_of_birth,
+                            phone: phone, date_of_birth: date_of_birth, status: status,
         })
-        navigate('/Home')
+        navigate('/')
     }
 
     return (
@@ -75,6 +76,16 @@ function CreateGuardian() {
             onChange={ (e) => setPhone(e.target.value)}
             className='w-full px-4 py-2 rounded-md my-2'
             ></input>
+
+            <label className='text-white'>Estatus</label>
+            <input
+            type='text'
+            placeholder='Activo, Inactivo'
+            value={status}
+            onChange={ (e) => setStatus(e.target.value)}
+            className='w-full px-4 py-2 rounded-md my-2'
+            ></input>
+
 
             <label className='text-white'>Fecha de Nacimiento</label>
             <input

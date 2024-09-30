@@ -51,47 +51,55 @@ function ShowTask()  {
   return (
 
     <>
-
+        
+            
     <Link to={'/createTask'}>
         <button className='bg-blue-600 text-black font-bold rounded-md hover:bg-blue-800 px-3'>Crear tarea</button>
     </Link>
-   
-    <div className=" max-w-md w-full p-10 rounded-md my-2 px-4 py-2 ">
-    {tasks.map ((task) => (
-    
- 
-            <tr  key={task.id} >
 
-                <Link to={`/TaskCard/${task.id}`}>  
-                <header className="flex w-full bg-slate-500 hover:bg-slate-700 rounded-md my-2">
-                    <h1 className="text-2xl font-bold w-full my-2 px-4 py-2">{task.title}</h1>
-                    <div className="w-full px-4 py-2 my-2">
-                    <p className="text-black font-semibold"> {task.description}</p>
-                    
-                        <button 
-                        className="bg-red-500 hover:bg-red-600 text-white px-4 py-2  rounded-md "
-                        onClick={() => {
-                            deleteTask(task.id)
-                        }}>Eliminar</button>
 
-                        <Link to={`/updatedTask/${task.id}`}>
-                        <button className="bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded-md ">
-                            Actualizar
-                        </button>
-                        </Link>
+        <div className=" max-w-md rounded-md my-2 px-4 py-2 flex justify-center mx-[50%]">
 
-                           
         
+            <div className="rounded-md my-2 px-10 py-2">
+            {tasks.map ((task) => (
+            
+        
+                    <tr  key={task.id} >
+
+                        <Link to={`/TaskCard/${task.id}`}>  
+                            <header className="flex w-full bg-slate-500 hover:bg-slate-700 rounded-md my-2">
+                                <h1 className="text-2xl font-bold w-full my-2 px-4 py-2">{task.title}</h1>
+                                <div className="w-full px-4 py-2 my-2">
+                                <p className="text-black font-semibold my-1"> {task.description}</p>
+                                <p className="text-black font-semibold my-1"> {task.deliveryDate}</p>
+                                <p className="text-black font-semibold my-1"> {task.status}</p>
+                                <button className="bg-red-500 hover:bg-red-600 my-1 text-white px-4 py-2  rounded-md "
+                                onClick={() => {
+                                    deleteTask(task.id)
+                                }}>Eliminar</button>
+
+                                    <Link to={`/updatedTask/${task.id}`}>
+                                    <button className="bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded-md ">
+                                       Actualizar
+                                    </button>
+                                     </Link>    
+                                    
+                                </div>
+                            </header>
+                        </Link>   
+
                         
-                    </div>
-                </header>
-            </Link>
-        
-            </tr>
-        ))}
 
-    </div>
-    
+                            
+                
+                    </tr>
+                    
+                ))}
+
+            </div>
+        
+        </div>
     </>
   )
 }

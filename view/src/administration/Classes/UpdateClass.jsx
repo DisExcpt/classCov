@@ -27,7 +27,7 @@ function UpdateClass() {
             teacher_id: teacher_id,
             
         })
-        navigate('/showTasks')
+        navigate('/ShowClass')
 
     }
 

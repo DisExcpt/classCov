@@ -28,6 +28,9 @@ import ShowTeachers from './administration/Professor/ShowTeachers';
 import UpdatedTeacher from './administration/Professor/UpdatedTeacher';
 import ShowStudents from './administration/Students/ShowStudents';
 import UpdatedStudent from './administration/Students/UpdatedStudent';
+import ProfileGuardian from './components/Profiles/ProfileGuardian';
+import ProfileTeacher from './components/Profiles/ProfileTeacher';
+import ProfileStudent from './components/Profiles/ProfileStudent';
 
 
 function App() {
@@ -45,7 +48,7 @@ function App() {
           
           <Route path='/showTasks' element={<ShowTask/>}>Tareas</Route>
           <Route path='/createTask' element={<CreateTask/>}>Crear Tarea</Route>
-          <Route path='/Home' element={<Home/>}>Inicio</Route>
+          <Route path='/' element={<Home/>}>Inicio</Route>
           <Route path='/UpdatedTask/:id' element={<UpdatedTask/>}>Actualizar</Route>
           <Route path='/TaskCard/:id' element={<TaskCard/>}>Task Cards</Route>
 
@@ -57,14 +60,17 @@ function App() {
           <Route path='/CreateTeacher' element={<CreateTeacher/>}></Route>
           <Route path='/ShowTeachers' element={<ShowTeachers/>}></Route>
           <Route path='/UpdatedTeacher/:id' element={<UpdatedTeacher/>}></Route>
+          <Route path='/ProfileTeacher/:id' element={<ProfileTeacher/>}></Route>
 
           <Route path='/CreateStudent' element={<CreateStudent/>}></Route>
           <Route path='/ShowStudents' element={<ShowStudents/>}></Route>
           <Route path='/UpdatedStudent/:id' element={<UpdatedStudent/>}></Route>
+          <Route path='/ProfileStudent/:id' element={<ProfileStudent/>}></Route>
 
           <Route path='/CreateGuardian' element={<CreateGuardian/>}></Route>
           <Route path='/ShowGuardians' element={<ShowGuardians/>}></Route>
           <Route path='/UpdatedGuardian/:id' element={<UpdatedGuardian/>}></Route>
+          <Route path='/ProfileGuardian/:id' element={<ProfileGuardian/>}></Route>
 
 
           <Route path='/CreateClass' element={<CreateClass/>}></Route>
@@ -75,7 +81,6 @@ function App() {
           <Route path='/CreateAdmin' element={<CreateAdmin/>}></Route>
           <Route path='/ShowAdmins' element={<ShowAdmins/>}></Route>
           <Route path='/UpdatedAdmin/:id' element={<UpdatedAdmin/>}></Route>
-
           <Route path='/ProfileAdmin/:id' element={<ProfileAdmin/>}></Route>
 
 

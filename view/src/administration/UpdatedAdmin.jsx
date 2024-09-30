@@ -29,7 +29,7 @@ function UpdatedAdmin() {
             role: role,
             status: status,
         })
-        navigate('/showTasks')
+        navigate('/ShowAdmins')
     
       }
       

@@ -23,10 +23,6 @@ function Home() {
     }
 
 
-    if (tasks.length === 0) {
-        return(<h1>No hay tareas</h1>)
-      }
-
     return (
       <div className='flex h-[calc(100vh-100px)] items-center justify-between'>
       

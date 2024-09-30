@@ -25,7 +25,7 @@ function CreateClass() {
       e.preventDefault() 
       await axios.post(URI,  {grade: grade, salon: salon, shift: shift, teacher_id: teacher_id , 
       })
-      navigate('/Home')
+      navigate('/')
     }
 
     

@@ -24,7 +24,7 @@ function CreateAnnouncements() {
       e.preventDefault() 
       await axios.post(URI,  {title: title, content: content, teacher_id: teacher_id, class_id: class_id, date: date,
       })
-      navigate('/Home')
+      navigate('/')
     }
   
   
@@ -33,6 +33,8 @@ function CreateAnnouncements() {
         <div className='bg-zinc-800 max-w-md w-full p-10 rounded-md flex'>
           <form onSubmit={create} >
               <h1 className='font-bold text-white text-center text-3xl'>Anuncios</h1>
+
+            <label className='text-white text-1xl font-semibold'>Titulo</label>
             <input 
             type='text' 
             placeholder='Titulo'
@@ -42,6 +44,7 @@ function CreateAnnouncements() {
             autoFocus
             ></input>
     
+            <label className='text-white text-1xl font-semibold'>Resumen</label>
             <textarea rows='3' 
             placeholder='Contenido'
             value={content}
@@ -49,27 +52,32 @@ function CreateAnnouncements() {
             className='w-full px-4 py-2 rounded-md my-2'
             ></textarea>
     
+    
+            <label className='text-white text-1xl font-semibold'>id del profesor</label>
             <input
             placeholder='id Profesor'
             value={teacher_id}
             onChange={ (e) => setTeacher_id(e.target.value)}
-            className='w-32 px-1 py-1 rounded-md my-2'
+            className='w-32 px-1 py-1 rounded-md my-2 mx-[18%]'
             ></input>
-    
+
+
+            <label className='text-white text-1xl font-semibold'>id de la materia</label>
             <input 
             type='text'
             placeholder='id Materia'
             value={class_id}
             onChange={ (e) => setClass_id(e.target.value)}
-            className='w-32 px-1 py-1 rounded-md my-1 mx-10'
+            className='w-32 px-1 py-1 rounded-md my-1 mx-[15%]'
             ></input>
 
+            <label className='text-white text-1xl font-semibold'>Fecha y hora</label>
             <input
               type='datetime-local'
               placeholder='0000-00-00'
               value={date}
               onChange={ (e) => setDate(e.target.value)}
-              className='px-1 py-1 rounded-md my-2'
+              className='px-1 py-1 rounded-md my-2 mx-3'
             >
             </input>
     

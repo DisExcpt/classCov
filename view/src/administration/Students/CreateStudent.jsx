@@ -29,7 +29,7 @@ function CreateStudent() {
         await axios.post(URI,  {name: name, email: email, password: password, role: role,
                             phone: phone, date_of_birth: date_of_birth, admission: admission, guardian_id: guardian_id,
         })
-        navigate('/Home')
+        navigate('/showStudents')
     }
   return (
 
