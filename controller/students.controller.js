@@ -83,7 +83,7 @@ export const getStudent = async (req, res) => {
 //Actualizar U
 
 export const updateStudent = [
-    validateTask,
+    
     async (req, res) => {
         try {
             const result = await studentsModel.update(req.body, {
@@ -112,3 +112,31 @@ export const deleteStudent = async (req, res) => {
     }
     
 }
+
+//Busqueda por id
+export const getStudentsByClassId = async (req, res) => {
+    const classId = req.query.class_id; // Obtener class_id de la query
+    try {
+        const students = await studentsModel.findAll({
+            where: { class_id: classId } // Filtrar estudiantes por class_id
+        });
+        res.json(students);
+    } catch (error) {
+        console.error('Database Error:', error);
+        res.status(500).json({ message: error.message });
+    }
+};
+
+//Busqueda por guardian_id
+export const getStudentsByGuardianId = async (req, res) => {
+    const guardianId = req.query.guardian_id; // Obtener class_id de la query
+    try {
+        const students = await studentsModel.findAll({
+            where: { guardian_id: guardianId } // Filtrar estudiantes por class_id
+        });
+        res.json(students);
+    } catch (error) {
+        console.error('Database Error:', error);
+        res.status(500).json({ message: error.message });
+    }
+};

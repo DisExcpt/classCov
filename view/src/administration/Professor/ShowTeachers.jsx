@@ -13,7 +13,7 @@ function ShowTeachers() {
     },[])
 
 
-    //Mostrar Tareas
+    //Mostrar Profes
     const getTeachers = async () => {
         const res = await axios.get(URI)
         if (Array.isArray(res.data)) {

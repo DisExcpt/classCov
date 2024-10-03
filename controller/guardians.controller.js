@@ -83,7 +83,7 @@ export const getGuardian = async (req, res) => {
 //Actualizar U
 
 export const updateGuardian = [
-    validateTask,
+    
     async (req, res) => {
         try {
             const result = await guardiansModel.update(req.body, {

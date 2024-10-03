@@ -18,16 +18,17 @@ function UpdateClass() {
     const navigate = useNavigate()
 
     const update = async (e) => {
-
         e.preventDefault()
+        try {
         await axios.put(URI+id, {
-            grade: grade,
-            salon: salon,
-            shift: shift,
+            
             teacher_id: teacher_id,
             
         })
         navigate('/ShowClass')
+        } catch (error) {
+        console.error('Error al actualizar la clase:', error.response.data);
+    }
 
     }
 
@@ -37,9 +38,7 @@ function UpdateClass() {
 
     const getClassById = async () => {
         const res = await axios.get(URI+id)
-        setGrade(res.data.grade)
-        setSalon(res.data.salon)
-        setShift(res.data.shift)
+        
         setTeacher_id(res.data.teacher_id)
      
 

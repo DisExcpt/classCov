@@ -16,6 +16,8 @@ function UpdatedStudent() {
     const [status, setStatus] = useState('')
   
     const {id} = useParams()
+
+    const navigate =useNavigate()
     
     const update = async (e) => {
 

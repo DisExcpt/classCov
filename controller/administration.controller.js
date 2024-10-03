@@ -87,7 +87,7 @@ export const getAdmin = async (req, res) => {
 //Actualizar U
 
 export const updateAdmin = [
-    validateTask,
+    
     async (req, res) => {
         try {
             const result = await administrationModel.update(req.body, {

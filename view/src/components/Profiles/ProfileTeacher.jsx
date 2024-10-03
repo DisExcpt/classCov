@@ -43,6 +43,7 @@ function ProfileTeacher() {
     <div className='flex justify-center'>
         <div className='bg-zinc-800 max-w-md w-full p-10 rounded-md text-white'>
             <h1>Nombre: {name}</h1>
+            <p>Codigo: {id}</p>
             <p>Correo: <span className='text-red-700'>{email}</span></p>
             <p>Telefono: {phone}</p>
             <p>Fecha de nacimiento: {date_of_birth}</p>

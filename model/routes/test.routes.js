@@ -1,7 +1,7 @@
 import express from "express";
 import { createTask, deleteTask, getAllTasks, getTask, updateTask } from "../../controller/task.controller.js";
 import { createAnnouncement, getAllAnnouncements, getAnnouncement, updateAnnouncement, deleteAnnouncement } from "../../controller/announcements.controller.js";
-import { createStudent, deleteStudent, getAllStudents, getStudent, updateStudent } from "../../controller/students.controller.js";
+import { createStudent, deleteStudent, getAllStudents, getStudent, updateStudent, getStudentsByClassId, getStudentsByGuardianId } from "../../controller/students.controller.js";
 import { createGuardian, deleteGuardian, getAllGuardians, getGuardian, updateGuardian } from "../../controller/guardians.controller.js";
 import { createTeacher, deleteTeacher, getAllTeachers, getTeacher, updateTeacher } from "../../controller/teachers.controller.js";
 import { createAdmin, deleteAdmin, getAdmin, getAllAdmin, updateAdmin } from "../../controller/administration.controller.js";
@@ -26,6 +26,8 @@ router.delete('/announcement/:id', deleteAnnouncement);//D
 //Estudiantes
 router.post('/student', createStudent);//C
 router.get('/students', getAllStudents);//R
+router.get('/students/class', getStudentsByClassId); // Obtener estudiantes por class_id
+router.get('/students/guardian', getStudentsByGuardianId); //Obtener estudiantes por guardian_id
 router.get('/student/:id', getStudent);//R
 router.put('/student/:id', updateStudent);//U
 router.delete('/student/:id', deleteStudent);//D

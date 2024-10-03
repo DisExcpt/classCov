@@ -28,9 +28,11 @@ export const studentsModel = db.define('students', {
     guardian_id: {type: DataTypes.INTEGER},
     password: {type: DataTypes.STRING},
     role: {type: DataTypes.INTEGER},
+    phone: {type: DataTypes.STRING},
     date_of_birth: {type: DataTypes.DATE},
     admission: {type: DataTypes.DATE},
     status: {type: DataTypes.STRING},
+    class_id: {type: DataTypes.INTEGER},
     
 
 })

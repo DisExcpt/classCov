@@ -81,7 +81,7 @@ export const getAnnouncement = async (req, res) => {
 //Actualizar U
 
 export const updateAnnouncement = [
-    validateTask,
+    
     async (req, res) => {
         try {
             const result = await announcementsModel.update(req.body, {

@@ -81,7 +81,7 @@ export const getTask = async (req, res) => {
 //Actualizar U
 
 export const updateTask = [
-    validateTask,
+    
     async (req, res) => {
         try {
             const result = await taskModel.update(req.body, {

@@ -27,22 +27,21 @@ function Home() {
       <div className='flex h-[calc(100vh-100px)] items-center justify-between'>
       
          
-          <div className='bg-blue-700 '>
+        <div className='bg-blue-700 '>
           
-            <ShowTask></ShowTask>
-          
-
+          <ShowTask></ShowTask>
+   
         </div>
 
-        <div className='bg-green-700 py-60'>
+        <div className='bg-green-700 '>
           <ShowAnnouncements></ShowAnnouncements>
         </div>
 
-        <div className='bg-red-700 py-60'>
+        <div className='bg-red-700 '>
         
           <ShowClass></ShowClass>
-        </div>
 
+        </div>
 
 
       </div>

@@ -84,7 +84,7 @@ export const getTeacher = async (req, res) => {
 //Actualizar U
 
 export const updateTeacher = [
-    validateTask,
+    
     async (req, res) => {
         try {
             const result = await teachersModel.update(req.body, {

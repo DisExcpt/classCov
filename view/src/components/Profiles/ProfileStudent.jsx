@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import { useNavigate, useParams } from "react-router-dom"
 
 const URI = 'http://localhost:4000/student/'
+const URIG = 'http://localhost:4000/Guardian/'
 
 function ProfileStudent() {
 
@@ -17,13 +18,22 @@ function ProfileStudent() {
     const [role, setRole] = useState('')
     const [phone, setPhone] = useState('')
     const [status, setStatus] = useState('')
+
+    const [nameG, setNameG] = useState('') //Nombre del padre
   
     const {id} = useParams()
     
+
   
     useEffect( () => {
       getStudentById()
     },[])
+
+    useEffect(() => {
+      if (guardian_id) {
+          getGuardianById(guardian_id);
+      }
+  }, [guardian_id]);
   
     const getStudentById = async () => {
       const res = await axios.get(URI+id)
@@ -39,6 +49,12 @@ function ProfileStudent() {
       
     }
 
+    const getGuardianById = async (guardianId) => {
+      const res = await axios.get(URIG + guardianId);
+      setNameG(res.data.name);
+  };
+
+
   return (
     <div className='flex justify-center'>
         <div className='bg-zinc-800 max-w-md w-full p-10 rounded-md text-white'>
@@ -50,6 +66,7 @@ function ProfileStudent() {
             <p>Fecha de Admisión: {admission}</p>
             <p>Puesto: {role}</p>
             <p>Status: {status}</p>
+            <h1>Tutor: {nameG}</h1>
         </div>
       </div>
   )

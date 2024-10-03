@@ -41,6 +41,21 @@ const validateTask = [
     }
 ];
 
+const validateUpdateTask = [
+    body('teacher_id')
+        .notEmpty().withMessage('El ID del profesor es obligatorio')
+        .custom(containsReservedWords).withMessage('El ID contiene palabras reservadas o caracteres no permitidos'),
+    // Agregar validaciones para otros campos solo si están presentes en la solicitud
+    (req, res, next) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            console.error('Validation Errors:', errors.array());
+            return res.status(400).json({ errors: errors.array() });
+        }
+        next();
+    }
+];
+
 
 
 // C
@@ -83,7 +98,7 @@ export const getClass = async (req, res) => {
 //Actualizar U
 
 export const updateClass = [
-    validateTask,
+    
     async (req, res) => {
         try {
             const result = await classModel.update(req.body, {

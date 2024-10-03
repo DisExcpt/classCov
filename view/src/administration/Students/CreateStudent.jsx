@@ -19,6 +19,7 @@ function CreateStudent() {
     const [date_of_birth, setDate_of_birth] = useState('')
     const [role, setRole] = useState('4')
     const [guardian_id, setGuardian_id] = useState ('')
+    const [class_id, setClass_id] = useState ('')
 
     const onSubmit = handleSubmit((data) => {
         console.log(data);
@@ -28,6 +29,7 @@ function CreateStudent() {
         e.preventDefault() 
         await axios.post(URI,  {name: name, email: email, password: password, role: role,
                             phone: phone, date_of_birth: date_of_birth, admission: admission, guardian_id: guardian_id,
+                            class_id: class_id,
         })
         navigate('/showStudents')
     }
@@ -80,6 +82,15 @@ function CreateStudent() {
             placeholder='id Tutor'
             value={guardian_id}
             onChange={ (e) => setGuardian_id(e.target.value)}
+            className='w-full px-4 py-2 rounded-md my-2'
+            ></input>
+
+            <label className='text-white'>id de la clase</label>
+            <input
+            type='text'
+            placeholder='1, 2, 3, ...'
+            value={class_id}
+            onChange={ (e) => setClass_id(e.target.value)}
             className='w-full px-4 py-2 rounded-md my-2'
             ></input>
 
