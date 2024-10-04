@@ -31,6 +31,8 @@ import UpdatedStudent from './administration/Students/UpdatedStudent';
 import ProfileGuardian from './components/Profiles/ProfileGuardian';
 import ProfileTeacher from './components/Profiles/ProfileTeacher';
 import ProfileStudent from './components/Profiles/ProfileStudent';
+import ClassTasks from './administration/Classes/ClassTasks';
+import ClassAnnouncements from './administration/Classes/ClassAnnouncements';
 
 
 function App() {
@@ -77,6 +79,8 @@ function App() {
           <Route path='/ShowClass' element={<ShowClass/>}></Route>
           <Route path='/UpdateClass/:id' element={<UpdateClass/>}></Route>
           <Route path='/ClassCard/:id' element={<ClassCard/>}></Route>
+          <Route path='/ClassTasks/:id' element={<ClassTasks/>}></Route>
+          <Route path='/ClassAnnouncements/:id' element={<ClassAnnouncements/>}></Route>
 
           <Route path='/CreateAdmin' element={<CreateAdmin/>}></Route>
           <Route path='/ShowAdmins' element={<ShowAdmins/>}></Route>

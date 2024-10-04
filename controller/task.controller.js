@@ -110,3 +110,17 @@ export const deleteTask = async (req, res) => {
     }
     
 }
+
+//Busqueda por id
+export const getTasksByClassId = async (req, res) => {
+    const classId = req.query.class_id; // Obtener class_id de la query
+    try {
+        const tasks = await taskModel.findAll({
+            where: { class_id: classId } // Filtrar estudiantes por class_id
+        });
+        res.json(tasks);
+    } catch (error) {
+        console.error('Database Error:', error);
+        res.status(500).json({ message: error.message });
+    }
+};
